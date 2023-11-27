@@ -10,16 +10,19 @@ Hardware component consists of three parts:
 * CPU
 * Memory(Pmem)
 * I/O Device
-Memory can be viewed as an array of 32-bit values, inplemented by uniting 4 8-bit RAM. Code and data are both stored in it.
+
+Memory can be viewed as an array of 32-bit values, inplemented by uniting four 8-bit RAM. Code and data are both stored in it.
 
 ## Load code and data
 
-A tool is designed to turn image file into 4 `.coe` files that can be load into Pmem.
+A tool is designed to turn image file into four `.coe` files that can be load into Pmem.
 To create `.coe` files, use following command under the specific directory:
 ```
 CS-AM/am-kernels/tests/am-tests$ make image
 ```
-The 4 `.coe` files will be in `/biuld`.
+The four `.coe` files will be in `/biuld`.
+
+## More Information
 
 Original PA, which is not fully implemented.
 * [Abstract-Machine](https://github.com/NJU-ProjectN/abstract-machine)
