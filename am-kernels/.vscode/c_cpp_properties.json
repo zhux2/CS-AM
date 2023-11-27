@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "./tests/cpu-tests/include/**",
+                "~/NJU/ics/ics2023/abstract-machine/klib/include/**",
+                "~/NJU/ics/ics2023/abstract-machine/am/include/**",
+                "${workspaceFolder}/tests/am-tests/include"
+            ],
+            "defines": [],
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
