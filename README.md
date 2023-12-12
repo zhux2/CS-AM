@@ -1,19 +1,31 @@
-# ICS2023 Programming Assignment
+# Digital Design and Computer Organization Experiments Project
 
-This project is the programming assignment of the class ICS(Introduction to Computer System)
-in Department of Computer Science and Technology, Nanjing University.
+This project is based on PA(the programming assignment of the class ICS(Introduction to Computer System)
+in Department of Computer Science and Technology, Nanjing University).
 
-For the guide of this programming assignment,
-refer to https://nju-projectn.github.io/ics-pa-gitbook/ics2023/
+## Hardware
 
-To initialize, run
-```bash
-bash init.sh subproject-name
+Use Verilog HDL. 
+Hardware component consists of three parts:
+* CPU
+* Memory(Pmem)
+* I/O Device
+
+Memory can be viewed as an array of 32-bit values, inplemented by uniting four 8-bit RAM. Code and data are both stored in it.
+
+## Load code and data
+
+A tool is designed to turn image file into four `.coe` files that can be load into Pmem.
+To create `.coe` files, use following command under the specific directory:
 ```
-See `init.sh` for more details.
+CS-AM/am-kernels/tests/am-tests$ make image
+```
+The four `.coe` files will be in `/biuld`.
 
-The following subprojects/components are included. Some of them are not fully implemented.
-* [NEMU](https://github.com/NJU-ProjectN/nemu)
+## More Information
+
+Original PA, which is not fully implemented.
 * [Abstract-Machine](https://github.com/NJU-ProjectN/abstract-machine)
-* [Nanos-lite](https://github.com/NJU-ProjectN/nanos-lite)
-* [Navy-apps](https://github.com/NJU-ProjectN/navy-apps)
+
+Link to ICS PA:
+* https://nju-projectn.github.io/ics-pa-gitbook/ics2023/
