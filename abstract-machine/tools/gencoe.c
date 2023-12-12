@@ -9,6 +9,7 @@ static char *tar_file_0 = NULL;
 static char *tar_file_1 = NULL;
 static char *tar_file_2 = NULL;
 static char *tar_file_3 = NULL;
+int mode;
 
 static int parse_args(int argc, char *argv[]) {
   const struct option table[] = {
@@ -17,17 +18,25 @@ static int parse_args(int argc, char *argv[]) {
     {"target_1" , required_argument, NULL, 'y'},
     {"target_2" , required_argument, NULL, 'u'},
     {"target_3" , required_argument, NULL, 'i'},
+    {"hex_0"    , required_argument, NULL, 'a'},
+    {"hex_1"    , required_argument, NULL, 's'},
+    {"hex_2"    , required_argument, NULL, 'd'},
+    {"hex_3"    , required_argument, NULL, 'f'},
     {"help"     , no_argument      , NULL, 'h'},
     {0          , 0                , NULL,  0 },
   };
   int o;
-  while ( (o = getopt_long(argc, argv, "-he:t:y:u:i:", table, NULL)) != -1) {
+  while ( (o = getopt_long(argc, argv, "-he:t:y:u:i:a:s:d:f:", table, NULL)) != -1) {
     switch (o) {
       case 'e': elf_file = optarg; break;
-      case 't': tar_file_0 = optarg; break;
+      case 't': mode = 0; tar_file_0 = optarg; break;
+      case 's':
       case 'y': tar_file_1 = optarg; break;
+      case 'd':
       case 'u': tar_file_2 = optarg; break;
+      case 'f':
       case 'i': tar_file_3 = optarg; break;
+      case 'a': tar_file_0 = optarg; mode = 1; break;
       case 1: img_file = optarg; return 0;
       default:
         printf("Usage: %s [OPTION...] IMAGE [args]\n\n", argv[0]);
@@ -72,15 +81,20 @@ void gencoe() {
   while (offset < size) {
     fseek(img, offset, SEEK_SET);
     fread(buf, 1, sizeof(buf), img);
-    sprintf(bufhex, "%02x, %02x, %02x, %02x, ", buf[0], buf[1], buf[2], buf[3]);
+    switch (mode) {
+      case 0: sprintf(bufhex, "%02x, %02x, %02x, %02x, ", buf[0], buf[1], buf[2], buf[3]); break;
+      case 1: sprintf(bufhex, "%02x \n%02x \n%02x \n%02x\n", buf[0], buf[1], buf[2], buf[3]);
+    }
     MAP(TAR, WRITE)
     offset += sizeof(buf);
   }
+  printf("counter = %d\n", offset >> 2);
   sprintf(bufhex, "00, 00, 00, 00, ");
   while (offset < (COE_LEN << 2)) {
     MAP(TAR, WRITE)
     offset += 4;
   }
+  printf("counter = %d\n", offset >> 2);
   printf("Done.\n");
 }
 

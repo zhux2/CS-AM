@@ -1,0 +1,354 @@
+
+/home/wzr/NJU/DigitalDesign-AM/CS-AM/am-kernels/kernels/dummy-1/build/dummy-1-riscv32-nemu.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00000413          	li	s0,0
+   4:	00001117          	auipc	sp,0x1
+   8:	7fc10113          	addi	sp,sp,2044 # 1800 <_end>
+   c:	4d4000ef          	jal	ra,4e0 <_trm_init>
+
+00000010 <main>:
+  10:	fb010113          	addi	sp,sp,-80
+  14:	01b12e23          	sw	s11,28(sp)
+  18:	00810593          	addi	a1,sp,8
+  1c:	02e00d93          	li	s11,46
+  20:	00e00513          	li	a0,14
+  24:	04112623          	sw	ra,76(sp)
+  28:	04812423          	sw	s0,72(sp)
+  2c:	04912223          	sw	s1,68(sp)
+  30:	05212023          	sw	s2,64(sp)
+  34:	03312e23          	sw	s3,60(sp)
+  38:	03412c23          	sw	s4,56(sp)
+  3c:	03512a23          	sw	s5,52(sp)
+  40:	03612823          	sw	s6,48(sp)
+  44:	03712623          	sw	s7,44(sp)
+  48:	03812423          	sw	s8,40(sp)
+  4c:	03912223          	sw	s9,36(sp)
+  50:	03a12023          	sw	s10,32(sp)
+  54:	01b10623          	sb	s11,12(sp)
+  58:	00012423          	sw	zero,8(sp)
+  5c:	2ac000ef          	jal	ra,308 <ioe_write>
+  60:	01700793          	li	a5,23
+  64:	00100d13          	li	s10,1
+  68:	00810593          	addi	a1,sp,8
+  6c:	00e00513          	li	a0,14
+  70:	00f10623          	sb	a5,12(sp)
+  74:	01a12423          	sw	s10,8(sp)
+  78:	290000ef          	jal	ra,308 <ioe_write>
+  7c:	00200c13          	li	s8,2
+  80:	00b00a93          	li	s5,11
+  84:	00810593          	addi	a1,sp,8
+  88:	00e00513          	li	a0,14
+  8c:	01812423          	sw	s8,8(sp)
+  90:	01510623          	sb	s5,12(sp)
+  94:	274000ef          	jal	ra,308 <ioe_write>
+  98:	f8500793          	li	a5,-123
+  9c:	00300b13          	li	s6,3
+  a0:	00810593          	addi	a1,sp,8
+  a4:	00e00513          	li	a0,14
+  a8:	00f10623          	sb	a5,12(sp)
+  ac:	01612423          	sw	s6,8(sp)
+  b0:	258000ef          	jal	ra,308 <ioe_write>
+  b4:	00400a13          	li	s4,4
+  b8:	04200c93          	li	s9,66
+  bc:	00810593          	addi	a1,sp,8
+  c0:	00e00513          	li	a0,14
+  c4:	01412423          	sw	s4,8(sp)
+  c8:	01910623          	sb	s9,12(sp)
+  cc:	23c000ef          	jal	ra,308 <ioe_write>
+  d0:	00500993          	li	s3,5
+  d4:	00810593          	addi	a1,sp,8
+  d8:	fa100793          	li	a5,-95
+  dc:	00e00513          	li	a0,14
+  e0:	01312423          	sw	s3,8(sp)
+  e4:	00f10623          	sb	a5,12(sp)
+  e8:	220000ef          	jal	ra,308 <ioe_write>
+  ec:	00600913          	li	s2,6
+  f0:	00810593          	addi	a1,sp,8
+  f4:	05000793          	li	a5,80
+  f8:	00e00513          	li	a0,14
+  fc:	01212423          	sw	s2,8(sp)
+ 100:	00f10623          	sb	a5,12(sp)
+ 104:	204000ef          	jal	ra,308 <ioe_write>
+ 108:	00700493          	li	s1,7
+ 10c:	00810593          	addi	a1,sp,8
+ 110:	02800793          	li	a5,40
+ 114:	00e00513          	li	a0,14
+ 118:	00912423          	sw	s1,8(sp)
+ 11c:	00f10623          	sb	a5,12(sp)
+ 120:	1e8000ef          	jal	ra,308 <ioe_write>
+ 124:	01400b93          	li	s7,20
+ 128:	00810593          	addi	a1,sp,8
+ 12c:	00800793          	li	a5,8
+ 130:	00e00513          	li	a0,14
+ 134:	00f12423          	sw	a5,8(sp)
+ 138:	01710623          	sb	s7,12(sp)
+ 13c:	1cc000ef          	jal	ra,308 <ioe_write>
+ 140:	00900793          	li	a5,9
+ 144:	00810593          	addi	a1,sp,8
+ 148:	00f12423          	sw	a5,8(sp)
+ 14c:	00e00513          	li	a0,14
+ 150:	f8a00793          	li	a5,-118
+ 154:	00f10623          	sb	a5,12(sp)
+ 158:	1b0000ef          	jal	ra,308 <ioe_write>
+ 15c:	00a00413          	li	s0,10
+ 160:	00810593          	addi	a1,sp,8
+ 164:	04500793          	li	a5,69
+ 168:	00e00513          	li	a0,14
+ 16c:	00812423          	sw	s0,8(sp)
+ 170:	00f10623          	sb	a5,12(sp)
+ 174:	194000ef          	jal	ra,308 <ioe_write>
+ 178:	00810593          	addi	a1,sp,8
+ 17c:	02200793          	li	a5,34
+ 180:	00e00513          	li	a0,14
+ 184:	01512423          	sw	s5,8(sp)
+ 188:	00f10623          	sb	a5,12(sp)
+ 18c:	17c000ef          	jal	ra,308 <ioe_write>
+ 190:	f9100a93          	li	s5,-111
+ 194:	00810593          	addi	a1,sp,8
+ 198:	00c00793          	li	a5,12
+ 19c:	00e00513          	li	a0,14
+ 1a0:	00f12423          	sw	a5,8(sp)
+ 1a4:	01510623          	sb	s5,12(sp)
+ 1a8:	160000ef          	jal	ra,308 <ioe_write>
+ 1ac:	00d00793          	li	a5,13
+ 1b0:	00810593          	addi	a1,sp,8
+ 1b4:	00f12423          	sw	a5,8(sp)
+ 1b8:	00e00513          	li	a0,14
+ 1bc:	fc800793          	li	a5,-56
+ 1c0:	00f10623          	sb	a5,12(sp)
+ 1c4:	144000ef          	jal	ra,308 <ioe_write>
+ 1c8:	00e00793          	li	a5,14
+ 1cc:	00810593          	addi	a1,sp,8
+ 1d0:	00f12423          	sw	a5,8(sp)
+ 1d4:	00e00513          	li	a0,14
+ 1d8:	fe400793          	li	a5,-28
+ 1dc:	00f10623          	sb	a5,12(sp)
+ 1e0:	128000ef          	jal	ra,308 <ioe_write>
+ 1e4:	00f00793          	li	a5,15
+ 1e8:	00810593          	addi	a1,sp,8
+ 1ec:	00f12423          	sw	a5,8(sp)
+ 1f0:	00e00513          	li	a0,14
+ 1f4:	ff200793          	li	a5,-14
+ 1f8:	00f10623          	sb	a5,12(sp)
+ 1fc:	10c000ef          	jal	ra,308 <ioe_write>
+ 200:	00810593          	addi	a1,sp,8
+ 204:	00f00513          	li	a0,15
+ 208:	01b10623          	sb	s11,12(sp)
+ 20c:	00012423          	sw	zero,8(sp)
+ 210:	0f8000ef          	jal	ra,308 <ioe_write>
+ 214:	00810593          	addi	a1,sp,8
+ 218:	00f00513          	li	a0,15
+ 21c:	01a12423          	sw	s10,8(sp)
+ 220:	01910623          	sb	s9,12(sp)
+ 224:	0e4000ef          	jal	ra,308 <ioe_write>
+ 228:	00810593          	addi	a1,sp,8
+ 22c:	00f00513          	li	a0,15
+ 230:	01812423          	sw	s8,8(sp)
+ 234:	01710623          	sb	s7,12(sp)
+ 238:	0d0000ef          	jal	ra,308 <ioe_write>
+ 23c:	00810593          	addi	a1,sp,8
+ 240:	00f00513          	li	a0,15
+ 244:	01612423          	sw	s6,8(sp)
+ 248:	01510623          	sb	s5,12(sp)
+ 24c:	0bc000ef          	jal	ra,308 <ioe_write>
+ 250:	00810593          	addi	a1,sp,8
+ 254:	07900793          	li	a5,121
+ 258:	00f00513          	li	a0,15
+ 25c:	01412423          	sw	s4,8(sp)
+ 260:	00f10623          	sb	a5,12(sp)
+ 264:	0a4000ef          	jal	ra,308 <ioe_write>
+ 268:	00810593          	addi	a1,sp,8
+ 26c:	fc700793          	li	a5,-57
+ 270:	00f00513          	li	a0,15
+ 274:	01312423          	sw	s3,8(sp)
+ 278:	00f10623          	sb	a5,12(sp)
+ 27c:	08c000ef          	jal	ra,308 <ioe_write>
+ 280:	00810593          	addi	a1,sp,8
+ 284:	fac00793          	li	a5,-84
+ 288:	00f00513          	li	a0,15
+ 28c:	01212423          	sw	s2,8(sp)
+ 290:	00f10623          	sb	a5,12(sp)
+ 294:	074000ef          	jal	ra,308 <ioe_write>
+ 298:	00f00513          	li	a0,15
+ 29c:	00810593          	addi	a1,sp,8
+ 2a0:	00912423          	sw	s1,8(sp)
+ 2a4:	00810623          	sb	s0,12(sp)
+ 2a8:	060000ef          	jal	ra,308 <ioe_write>
+ 2ac:	04c12083          	lw	ra,76(sp)
+ 2b0:	04812403          	lw	s0,72(sp)
+ 2b4:	04412483          	lw	s1,68(sp)
+ 2b8:	04012903          	lw	s2,64(sp)
+ 2bc:	03c12983          	lw	s3,60(sp)
+ 2c0:	03812a03          	lw	s4,56(sp)
+ 2c4:	03412a83          	lw	s5,52(sp)
+ 2c8:	03012b03          	lw	s6,48(sp)
+ 2cc:	02c12b83          	lw	s7,44(sp)
+ 2d0:	02812c03          	lw	s8,40(sp)
+ 2d4:	02412c83          	lw	s9,36(sp)
+ 2d8:	02012d03          	lw	s10,32(sp)
+ 2dc:	01c12d83          	lw	s11,28(sp)
+ 2e0:	00000513          	li	a0,0
+ 2e4:	05010113          	addi	sp,sp,80
+ 2e8:	00008067          	ret
+
+000002ec <__am_timer_config>:
+ 2ec:	00100793          	li	a5,1
+ 2f0:	00f50023          	sb	a5,0(a0)
+ 2f4:	00f500a3          	sb	a5,1(a0)
+ 2f8:	00008067          	ret
+
+000002fc <__am_input_config>:
+ 2fc:	00100793          	li	a5,1
+ 300:	00f50023          	sb	a5,0(a0)
+ 304:	00008067          	ret
+
+00000308 <ioe_write>:
+ 308:	00251513          	slli	a0,a0,0x2
+ 30c:	50800793          	li	a5,1288
+ 310:	00a787b3          	add	a5,a5,a0
+ 314:	0007a783          	lw	a5,0(a5)
+ 318:	00058513          	mv	a0,a1
+ 31c:	00078067          	jr	a5
+
+00000320 <__am_timer_uptime>:
+ 320:	a00007b7          	lui	a5,0xa0000
+ 324:	04c7a703          	lw	a4,76(a5) # a000004c <_end+0x9fffe84c>
+ 328:	0487a783          	lw	a5,72(a5)
+ 32c:	00e52223          	sw	a4,4(a0)
+ 330:	00f52023          	sw	a5,0(a0)
+ 334:	00008067          	ret
+
+00000338 <__am_timer_rtc>:
+ 338:	76c00793          	li	a5,1900
+ 33c:	00052a23          	sw	zero,20(a0)
+ 340:	00052823          	sw	zero,16(a0)
+ 344:	00052623          	sw	zero,12(a0)
+ 348:	00052423          	sw	zero,8(a0)
+ 34c:	00052223          	sw	zero,4(a0)
+ 350:	00f52023          	sw	a5,0(a0)
+ 354:	00008067          	ret
+
+00000358 <__am_input_keybrd>:
+ 358:	400007b7          	lui	a5,0x40000
+ 35c:	0007a783          	lw	a5,0(a5) # 40000000 <_end+0x3fffe800>
+ 360:	ffff86b7          	lui	a3,0xffff8
+ 364:	fff68693          	addi	a3,a3,-1 # ffff7fff <_end+0xffff67ff>
+ 368:	00f7d713          	srli	a4,a5,0xf
+ 36c:	00177713          	andi	a4,a4,1
+ 370:	00d7f7b3          	and	a5,a5,a3
+ 374:	00e50023          	sb	a4,0(a0)
+ 378:	00f52223          	sw	a5,4(a0)
+ 37c:	00008067          	ret
+
+00000380 <__am_input_sw>:
+ 380:	900007b7          	lui	a5,0x90000
+ 384:	0007a783          	lw	a5,0(a5) # 90000000 <_end+0x8fffe800>
+ 388:	00f52023          	sw	a5,0(a0)
+ 38c:	00008067          	ret
+
+00000390 <__am_gpu_config>:
+ 390:	4f400793          	li	a5,1268
+ 394:	0007a603          	lw	a2,0(a5)
+ 398:	0047a683          	lw	a3,4(a5)
+ 39c:	0087a703          	lw	a4,8(a5)
+ 3a0:	00c7a783          	lw	a5,12(a5)
+ 3a4:	00c52023          	sw	a2,0(a0)
+ 3a8:	00d52223          	sw	a3,4(a0)
+ 3ac:	00e52423          	sw	a4,8(a0)
+ 3b0:	00f52623          	sw	a5,12(a0)
+ 3b4:	00008067          	ret
+
+000003b8 <__am_gpu_fbdraw>:
+ 3b8:	00452583          	lw	a1,4(a0)
+ 3bc:	01052803          	lw	a6,16(a0)
+ 3c0:	00852703          	lw	a4,8(a0)
+ 3c4:	00058313          	mv	t1,a1
+ 3c8:	07005263          	blez	a6,42c <__am_gpu_fbdraw+0x74>
+ 3cc:	00259893          	slli	a7,a1,0x2
+ 3d0:	00052603          	lw	a2,0(a0)
+ 3d4:	00c52683          	lw	a3,12(a0)
+ 3d8:	00b888b3          	add	a7,a7,a1
+ 3dc:	00789893          	slli	a7,a7,0x7
+ 3e0:	60000e37          	lui	t3,0x60000
+ 3e4:	00060793          	mv	a5,a2
+ 3e8:	02d05a63          	blez	a3,41c <__am_gpu_fbdraw+0x64>
+ 3ec:	01c88833          	add	a6,a7,t3
+ 3f0:	00072603          	lw	a2,0(a4)
+ 3f4:	00f806b3          	add	a3,a6,a5
+ 3f8:	00178793          	addi	a5,a5,1
+ 3fc:	00c6a023          	sw	a2,0(a3)
+ 400:	00052603          	lw	a2,0(a0)
+ 404:	00c52683          	lw	a3,12(a0)
+ 408:	00470713          	addi	a4,a4,4
+ 40c:	00d605b3          	add	a1,a2,a3
+ 410:	feb7c0e3          	blt	a5,a1,3f0 <__am_gpu_fbdraw+0x38>
+ 414:	00452583          	lw	a1,4(a0)
+ 418:	01052803          	lw	a6,16(a0)
+ 41c:	00130313          	addi	t1,t1,1
+ 420:	010587b3          	add	a5,a1,a6
+ 424:	28088893          	addi	a7,a7,640
+ 428:	faf34ee3          	blt	t1,a5,3e4 <__am_gpu_fbdraw+0x2c>
+ 42c:	00008067          	ret
+
+00000430 <__am_gpu_status>:
+ 430:	00100793          	li	a5,1
+ 434:	00f50023          	sb	a5,0(a0)
+ 438:	00008067          	ret
+
+0000043c <__am_txt_fbdraw>:
+ 43c:	00c52783          	lw	a5,12(a0)
+ 440:	00852883          	lw	a7,8(a0)
+ 444:	00052703          	lw	a4,0(a0)
+ 448:	00452603          	lw	a2,4(a0)
+ 44c:	06f05063          	blez	a5,4ac <__am_txt_fbdraw+0x70>
+ 450:	00088693          	mv	a3,a7
+ 454:	70800f13          	li	t5,1800
+ 458:	20000eb7          	lui	t4,0x20000
+ 45c:	30000e37          	lui	t3,0x30000
+ 460:	04f00313          	li	t1,79
+ 464:	00261793          	slli	a5,a2,0x2
+ 468:	00c787b3          	add	a5,a5,a2
+ 46c:	0006c803          	lbu	a6,0(a3)
+ 470:	00479793          	slli	a5,a5,0x4
+ 474:	00e787b3          	add	a5,a5,a4
+ 478:	01d785b3          	add	a1,a5,t4
+ 47c:	01058023          	sb	a6,0(a1)
+ 480:	000f4583          	lbu	a1,0(t5)
+ 484:	01c787b3          	add	a5,a5,t3
+ 488:	00168693          	addi	a3,a3,1
+ 48c:	00b78023          	sb	a1,0(a5)
+ 490:	00170713          	addi	a4,a4,1
+ 494:	411685b3          	sub	a1,a3,a7
+ 498:	00e35663          	bge	t1,a4,4a4 <__am_txt_fbdraw+0x68>
+ 49c:	00160613          	addi	a2,a2,1
+ 4a0:	00000713          	li	a4,0
+ 4a4:	00c52783          	lw	a5,12(a0)
+ 4a8:	faf5cee3          	blt	a1,a5,464 <__am_txt_fbdraw+0x28>
+ 4ac:	00008067          	ret
+
+000004b0 <__am_light_led>:
+ 4b0:	00052683          	lw	a3,0(a0)
+ 4b4:	00454703          	lbu	a4,4(a0)
+ 4b8:	700007b7          	lui	a5,0x70000
+ 4bc:	00d787b3          	add	a5,a5,a3
+ 4c0:	00e78023          	sb	a4,0(a5) # 70000000 <_end+0x6fffe800>
+ 4c4:	00008067          	ret
+
+000004c8 <__am_light_seg>:
+ 4c8:	00052683          	lw	a3,0(a0)
+ 4cc:	00454703          	lbu	a4,4(a0)
+ 4d0:	800007b7          	lui	a5,0x80000
+ 4d4:	00d787b3          	add	a5,a5,a3
+ 4d8:	00e78023          	sb	a4,0(a5) # 80000000 <_end+0x7fffe800>
+ 4dc:	00008067          	ret
+
+000004e0 <_trm_init>:
+ 4e0:	ff010113          	addi	sp,sp,-16
+ 4e4:	50400513          	li	a0,1284
+ 4e8:	00112623          	sw	ra,12(sp)
+ 4ec:	b25ff0ef          	jal	ra,10 <main>
+ 4f0:	0000006f          	j	4f0 <_trm_init+0x10>

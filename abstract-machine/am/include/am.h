@@ -63,6 +63,7 @@ inline   void        reset_col() { serialcol = DEFAULT_COL; }
 inline   void        set_col(char new_col) { serialcol = new_col; }
 void     vga_set_txt ();
 void     vga_set_img (); 
+void     set_cursor_position (int x, int y);
 void     halt        (int code) __attribute__((__noreturn__));
 
 // -------------------- IOE: Input/Output Devices --------------------

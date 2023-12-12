@@ -22,6 +22,7 @@ char  *strcpy    (char *dst, const char *src);
 char  *strncpy   (char *dst, const char *src, size_t n);
 int    strcmp    (const char *s1, const char *s2);
 int    strncmp   (const char *s1, const char *s2, size_t n);
+char  *strtok    (char *src, char seperator, int *len);
 
 // stdlib.h
 void   srand     (unsigned int seed);
@@ -40,7 +41,8 @@ int    vsnprintf (char *str, size_t size, const char *format, va_list ap);
 
 // rv32m.h
 uint64_t mul     (uint32_t x, uint32_t y);
-uint64_t umodsi3 (uint32_t a, uint32_t b);
+uint32_t modu    (uint32_t a, uint32_t b);
+uint32_t divu    (uint32_t a, uint32_t b);
 
 // assert.h
 #ifdef NDEBUG

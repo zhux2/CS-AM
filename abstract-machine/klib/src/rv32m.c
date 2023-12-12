@@ -13,7 +13,23 @@ uint64_t mul(uint32_t x, uint32_t y) {
     return p;
 }
 
-uint64_t umodsi3(uint32_t a, uint32_t b) {
+uint32_t modu(uint32_t a, uint32_t b) {
+    uint32_t bit = 1;
+    while (b < a && bit && !(b & (1UL << 31))) {
+        b <<= 1;
+        bit <<= 1;
+    }
+    while (bit) {
+        if (a >= b) {
+            a -= b;
+        }
+        bit >>= 1;
+        b >>= 1;
+    }
+    return a;
+}
+
+uint32_t divu(uint32_t a, uint32_t b) {
     uint32_t bit = 1;
     uint32_t res = 0;
     while (b < a && bit && !(b & (1UL << 31))) {
@@ -28,5 +44,5 @@ uint64_t umodsi3(uint32_t a, uint32_t b) {
         bit >>= 1;
         b >>= 1;
     }
-    return (((uint64_t)res) << 32) | a;
+    return res;
 }

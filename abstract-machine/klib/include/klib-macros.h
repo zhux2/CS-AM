@@ -38,8 +38,6 @@
 
 //--RV32M--
 #define mulhu(x, y) ((uint32_t)(mul(x, y) >> 32))
-#define divu(x, y) ((uint32_t)(umodsi3(x, y) >> 32))
-#define modu(x, y) ((uint32_t)(umodsi3(x, y)))
 
 #define ANSI_FG_BLACK   0x00
 #define ANSI_FG_RED     0x10

@@ -17,6 +17,7 @@ static const char *tests[NR_TESTS] = {
 char space[NR_SPACE];
 void init_txt() {
   RESET_COL;
+  set_cursor_position(0, 0);
   io_write(AM_TXT_FBDRAW, 0, 0, space, TXT_H * TXT_V);
 }
 
@@ -30,6 +31,7 @@ void init_img() {
 
 int main() {
   AM_INPUT_SW_T arg = io_read(AM_INPUT_SW);
+  io_write(AM_LIGHT_SEG, 0, arg.sw);
   switch (arg.sw) {
     CASE(0, hello, INIT_TXT);
     CASE(1, rtc_test, INIT_TXT);
@@ -39,10 +41,11 @@ int main() {
     CASE(5, board_io_port, INIT_TXT);
     case 6:
     default:
+      INIT_TXT;
       printf("Usage: make run mainargs=*\n");
       for (int ch = 0; ch < NR_TESTS; ch++) {
         if (tests[ch]) {
-          printf("  %c: %s\n", ch, tests[ch]);
+          printf("  %d: %s\n", ch, tests[ch]);
         }
       }
   }

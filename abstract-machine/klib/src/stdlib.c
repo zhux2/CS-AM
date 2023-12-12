@@ -3,11 +3,13 @@
 #include <klib-macros.h>
 
 #if !defined(__ISA_NATIVE__) || defined(__NATIVE_USE_KLIB__)
-static unsigned long int next = 1;
+static uint32_t next = 1;
+
+#define BIT(x, n) ((x >> n) & 1)
 
 int rand(void) {
   // RAND_MAX assumed to be 32767
-  next = next * 1103515245 + 12345;
+  next = (next << 1) | (BIT(next, 0) ^ BIT(next, 1) ^ BIT(next, 21) ^ BIT(next, 31));
   return (unsigned int)(next/65536) % 32768;
 }
 

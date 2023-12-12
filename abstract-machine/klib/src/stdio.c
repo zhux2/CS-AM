@@ -92,17 +92,17 @@ static int printstr(char *s, char *out, bool mode, bool l_align,
         case 'x': \
           out += int2str(va_arg(ap, int), out, 16, X##_MODE, 0, \
                          l_align, align, filler, n - LEN_PRINT, &nr_char); \
-          break;\
+          rst = 1; break;\
         case 'd': \
           out += int2str(va_arg(ap, int), out, 10, X##_MODE, 1, \
                          l_align, align, filler, n - LEN_PRINT, &nr_char); \
-          break;\
-        case 's': \
+          rst = 1; break;\
+        case 's': case 'c': \
           out += printstr(va_arg(ap, char *), out, X##_MODE, \
                           l_align, align, n - LEN_PRINT, &nr_char);\
-          break;\
-        case '%': PUTC_##X('%', n); nr_char++; break;\
-        default : PUTC_##X('%', n); PUTC_##X(*p, n); nr_char += 2; break;\
+          rst = 1; break;\
+        case '%': PUTC_##X('%', n); nr_char++; rst = 1; break;\
+        default : PUTC_##X('%', n); PUTC_##X(*p, n); nr_char += 2; rst = 1; break;\
       }\
       if (rst) { RESET; }\
     }\

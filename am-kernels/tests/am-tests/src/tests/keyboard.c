@@ -20,7 +20,7 @@ static void drain_keys() {
 
 void keyboard_test() {
   printf("Try to press any key (uart or keyboard)...\n");
-  has_kbd  = io_read(AM_INPUT_CONFIG).present;
+  has_kbd  = 1;
   while (1) {
     drain_keys();
   }

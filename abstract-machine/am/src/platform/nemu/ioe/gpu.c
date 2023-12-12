@@ -2,6 +2,7 @@
 #include <nemu.h>
 
 void __am_gpu_init() {
+  vga_set_img();
 //for testing
   // int i;
   // int w = 32 << 2;  // TODO: get the correct width

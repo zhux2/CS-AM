@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <am.h>
 #include <amdev.h>
+#include <klib.h>
 #include <klib-macros.h>
 
 #define MAX_LENGTH 100
@@ -50,8 +51,8 @@ static int read_key() {
 
 static point_t create_food(dim_t game_size) {
   point_t f;
-  f.x = rand() % game_size.width;
-  f.y = rand() % game_size.height;
+  f.x = modu(rand(), game_size.width);
+  f.y = modu(rand(), game_size.height);
   return f;
 }
 
@@ -177,7 +178,7 @@ int main() {
     }
     refresh();
 
-    uint64_t sleep = 100000 - snake.length * 5000 < 5000 ? 5000 : 100000 - snake.length * 5000;
+    uint64_t sleep = 100000 - mul(snake.length, 5000) < 5000 ? 5000 : 100000 - mul(snake.length, 5000);
     uint64_t next_us = io_read(AM_TIMER_UPTIME).us + sleep;
     while (io_read(AM_TIMER_UPTIME).us < next_us) ;
   } while (!snake.dead);

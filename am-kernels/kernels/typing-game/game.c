@@ -7,9 +7,9 @@
 #define CHAR_W          8
 #define CHAR_H         16
 #define NCHAR         128
-#define COL_WHITE    0xeeeeee
-#define COL_RED      0xff0033
-#define COL_GREEN    0x00cc33
+#define COL_WHITE    0xffffff
+#define COL_RED      0xff0000
+#define COL_GREEN    0x00ff00
 #define COL_PURPLE   0x2a0a29
 
 enum { WHITE = 0, RED, GREEN, PURPLE };
@@ -18,7 +18,9 @@ struct character {
   int x, y, v, t;
 } chars[NCHAR];
 
-int screen_w, screen_h, hit, miss, wrong;
+#define screen_w H_Pixels
+#define screen_h V_Pixels
+int hit, miss, wrong;
 uint32_t texture[3][26][CHAR_W * CHAR_H], blank[CHAR_W * CHAR_H];
 
 int min(int a, int b) {
@@ -26,7 +28,7 @@ int min(int a, int b) {
 }
 
 int randint(int l, int r) {
-  return l + (rand() & 0x7fffffff) % (r - l + 1);
+  return l + modu((rand() & 0x7fffffff), (r - l + 1));
 }
 
 void new_char() {
@@ -36,7 +38,7 @@ void new_char() {
       c->ch = 'A' + randint(0, 25);
       c->x = randint(0, screen_w - CHAR_W);
       c->y = 0;
-      c->v = (screen_h - CHAR_H + 1) / randint(FPS * 3 / 2, FPS * 2);
+      c->v = divu((screen_h - CHAR_H + 1), randint(FPS * 3 / 2, FPS * 2));
       c->t = 0;
       return;
     }
@@ -44,7 +46,7 @@ void new_char() {
 }
 
 void game_logic_update(int frame) {
-  if (frame % (FPS / CPS) == 0) new_char();
+  if (modu(frame, (FPS / CPS)) == 0) new_char();
   for (int i = 0; i < LENGTH(chars); i++) {
     struct character *c = &chars[i];
     if (c->ch) {
@@ -85,8 +87,6 @@ void render() {
     }
   }
   io_write(AM_GPU_FBDRAW, 0, 0, NULL, 0, 0, true);
-  for (int i = 0; i < 40; i++) putch('\b');
-  //printf("Hit: %d; Miss: %d; Wrong: %d", hit, miss, wrong);
 }
 
 void check_hit(char ch) {
@@ -107,8 +107,7 @@ void check_hit(char ch) {
 
 
 void video_init() {
-  screen_w = io_read(AM_GPU_CONFIG).width;
-  screen_h = io_read(AM_GPU_CONFIG).height;
+  vga_set_img();
 
   extern char font[];
   for (int i = 0; i < CHAR_W * CHAR_H; i++)
@@ -142,8 +141,9 @@ char lut[256] = {
 };
 
 int main() {
-  ioe_init();
+  //ioe_init();
   video_init();
+  srand(123);
 
   //panic_on(!io_read(AM_TIMER_CONFIG).present, "requires timer");
   //panic_on(!io_read(AM_INPUT_CONFIG).present, "requires keyboard");
@@ -152,7 +152,7 @@ int main() {
 
   int current = 0, rendered = 0;
   while (1) {
-    int frames = io_read(AM_TIMER_UPTIME).us / (1000000 / FPS);
+    int frames = divu(io_read(AM_TIMER_UPTIME).us, (1000000 / FPS));
 
     for (; current < frames; current++) {
       game_logic_update(current);

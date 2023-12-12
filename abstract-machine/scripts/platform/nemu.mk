@@ -15,6 +15,10 @@ COEFLAGS  += -t $(shell dirname $(IMAGE).elf)/$(NAME)-0.coe
 COEFLAGS  += -y $(shell dirname $(IMAGE).elf)/$(NAME)-1.coe
 COEFLAGS  += -u $(shell dirname $(IMAGE).elf)/$(NAME)-2.coe
 COEFLAGS  += -i $(shell dirname $(IMAGE).elf)/$(NAME)-3.coe
+#COEFLAGS  += -a $(shell dirname $(IMAGE).elf)/$(NAME)-0.hex
+#COEFLAGS  += -s $(shell dirname $(IMAGE).elf)/$(NAME)-1.hex
+#COEFLAGS  += -d $(shell dirname $(IMAGE).elf)/$(NAME)-2.hex
+#COEFLAGS  += -f $(shell dirname $(IMAGE).elf)/$(NAME)-3.hex
 
 CFLAGS += -DMAINARGS=\"$(mainargs)\"
 CFLAGS += -I$(DD_HOME)/am/src/platform/nemu/include

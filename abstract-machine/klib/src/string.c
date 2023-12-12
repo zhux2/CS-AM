@@ -90,4 +90,15 @@ int memcmp(const void *s1, const void *s2, size_t n) {
   return 0;
 }
 
+char *strtok(char *src, char seperator, int *len) {
+  char *original_src = src;
+  char *dst;
+  while (*src == seperator) src++;
+  dst = src;
+  while (*src && *src != seperator) src++;
+  if (*src) { *src = '\0'; src++; }
+  *len = src - original_src;
+  return dst;
+}
+
 #endif

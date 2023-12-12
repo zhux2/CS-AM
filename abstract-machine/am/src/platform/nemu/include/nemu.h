@@ -11,20 +11,20 @@
 #elif defined(__ISA_MIPS32__)
 # define nemu_trap(code) asm volatile ("move $v0, %0; sdbbp" : :"r"(code))
 #elif defined(__riscv)
-# define nemu_trap(code) asm volatile("mv a0, %0; ebreak" : :"r"(code))
+# define nemu_trap(code) 
 #elif defined(__ISA_LOONGARCH32R__)
 # define nemu_trap(code) asm volatile("move $a0, %0; break 0" : :"r"(code))
 #elif
 # error unsupported ISA __ISA__
 #endif
 
-#if defined(__ARCH_X86_NEMU)
-# define DEVICE_BASE 0x0
-#else
-# define DEVICE_BASE 0xa0000000
-#endif
+// #if defined(__ARCH_X86_NEMU)
+// # define DEVICE_BASE 0x0
+// #else
+// # define DEVICE_BASE 0xa0000000
+// #endif
 
-#define MMIO_BASE 0xa0000000
+// #define MMIO_BASE 0xa0000000
 
 #define TXT_ADDR        0x20000000
 #define TXTCOL_ADDR     0x30000000

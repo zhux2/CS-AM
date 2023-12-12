@@ -40,6 +40,11 @@ void vga_set_img() {
   outb(VGA_CONF_PORT, 0x00);
 }
 
+void set_cursor_position(int x, int y) {
+  txt_x = x;
+  txt_y = y;
+}
+
 void halt(int code) {
   nemu_trap(code);
 
