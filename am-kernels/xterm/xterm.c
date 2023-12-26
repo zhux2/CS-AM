@@ -30,8 +30,8 @@ f(UP, ' ') f(DOWN, ' ') f(LEFT, ' ') f(RIGHT, ' ') f(INSERT, ' ') f(DELETE, 0x7f
 int main() {
     GLOBAL_INIT_TXT;
     NEW_LINE;
-    cmd_main("logo");
-    NEW_LINE; PUT_PROMPT;
+    // cmd_main("logo");
+    // NEW_LINE; PUT_PROMPT;
     char ch;
     int sec = 1;
     while (1) {
@@ -47,7 +47,8 @@ int main() {
             continue;
         }
         switch (ev.keycode) {
-        case AM_KEY_BACKSPACE: cmd_len--; BACKSPACE_HANDLER; break;
+        case AM_KEY_BACKSPACE: 
+            if (cmd_len) {cmd_len--; BACKSPACE_HANDLER; } break;
         case AM_KEY_CAPSLOCK : capslock_on = capslock_on ^ 1; break;
         case AM_KEY_RETURN   : 
             if (cmd_len) {

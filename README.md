@@ -14,6 +14,7 @@ Hardware component consists of three parts:
 Memory can be viewed as an array of 32-bit values, inplemented by uniting four 8-bit RAM. Code and data are both stored in it.
 
 ## Load code and data
+Before starting, make sure to set the environment variable `DD_HOME` to the absolute path of `abstract-machine`.
 
 A tool is designed to turn image file into four `.coe` files that can be load into Pmem.
 To create `.coe` files, use following command under the specific directory:
